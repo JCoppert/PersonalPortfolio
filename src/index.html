@@ -13,7 +13,13 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,30 +27,106 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
+  <!-- MODAL, size is a Vimeo thing, close should work -->
+  <div class="modal fade" id="full-demo-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close-bttn" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always">></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Add your site or application content here -->
-  <div class="landing">
+  <div class="landing" style="-webkit-transform-style: preserve-3d; -webkit-backface-visibility: hidden;">
     <div class="introduction">
       <div class="funny-gif">
         <img id="reverse" class="funny-gif-img"/>
         <img id="forwards" class="funny-gif-img"/>
       </div>
       <img src="img/headshot.png" class="profile-pic"/>
-      <h1>Hi I'm Jordan!</h1>
+      <h1 class="name"><span>Hi I'm Jordan!</span></h1>
       <!-- Inspired by https://codepen.io/hi-im-si/pen/DHoup -->
       <h2 class="typewriter type-cursor"></h2>
     </div>
     <div class="demos">
-      <h1>Fun stuffs I've made</h1>
+      <h1 style="color:#888888; font-family: 'Faster One', cursive; text-align: center; margin: 3vh;">Fun stuffs I've made</h1>
+      <div class="previews">
+        <div class="individual-project-preview">
+          <h2>Freestyle</h2>
+          <h5> A web app for collaboratively mixing music with your friends!</h5>
+          <img src="img/freestyle-preview.gif"/>
+          <h5>Responsibilities</h5>
+          <ul>
+            <li>Real time web socket communications</li>
+            <li>Data modeling of Java and Firebase classes</li>
+            <li>Assisted in audio framework implementation and UI work</li>
+          </ul>
+          <button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-src="https://player.vimeo.com/video/285222258?badge=0" data-target="#full-demo-modal">
+            See it in action!
+          </button>
+        </div>
+        <div class="individual-project-preview">
+          <h2>OpenGL</h2>
+          <h5>Polygonal meshes, spline animations, and realistic lighting methods</h5>
+          <img src="img/heightmap.gif"/>
+          <h5>Applications</h5>
+          <ul>
+            <li>Gray scale images to height maps</li>
+            <li>Roller coaster!</li>
+            <li>Raytracer</li>
+          </ul>
+          <button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-src="https://player.vimeo.com/video/285223108?badge=0" data-target="#full-demo-modal">
+            Check it!
+          </button>
+        </div>
+      </div>
+      <div class="yoshi-container">
+        <img class="yoshi" src="img/yoshi.png"/>
+      </div>
     </div>
     <div class="skills">
-      <h1>Talents</h1>
+      <h1 style="color: white; font-family: 'Faster One', cursive; text-align: center; margin: 0;">My Toolbox</h1>
+      <div class="talent-grid" style="margin-top: 1vh; margin-bottom: 1vh;">
+        <div class="talent-column">
+          <img class="angular" src="img/angular.png"/>
+          <img class="swift" src="img/swift.png"/>
+          <img class="c-sharp" src="img/c-sharp.png"/>
+        </div>
+        <div class="talent-column">
+          <img class="typescript" src="img/typescript.png"/>
+          <img class="html" src="img/html.png"/>
+          <img class="css" src="img/css.png"/>
+        </div>
+        <div class="talent-column">
+          <img class="entity-framework" src="img/entity-framework.png"/>
+          <img class="opengl" src="img/opengl.png"/>
+          <img class="cplusplus" src="img/c++.png"/>
+        </div>
+        <div class="talent-column">
+          <img class="java" src="img/java.png"/>
+          <img class="mongodb" src="img/mongodb.png"/>
+          <img class="tsql" src="img/t-sql.png"/>
+        </div>
+      </div>
+      <h2 id="talent-text" style="color: white; text-align: center; font-family: 'Baloo Tammudu', cursive; margin: 0;">AngularJS</h2>
     </div>
-    <div class="resume">
-      <h1>The "professional" part</h1>
+    <div style="color: white;" class="resume">
+      <h1 style="font-family: 'Faster One', cursive; text-align: center; margin: 0;">The "professional" part</h1>
+      <h2 style="text-align: center; font-family: 'Baloo Tammudu', cursive;">Thanks for checking out my portfolio! Get in touch and have a stellar day!</h2>
+      <form style="text-align: center" method="get" action="doc/resume.docx">
+        <button style="margin: 1vh; color: white; font-family: 'Baloo Tammudu', cursive;" class="btn btn-large btn-success">Download resume</button>
+      </form>
     </div>
   </div>
+
   <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
-  <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
@@ -52,7 +134,7 @@
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview');
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>
