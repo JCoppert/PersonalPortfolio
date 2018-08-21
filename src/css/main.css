@@ -38,7 +38,9 @@ https://internetingishard.com/html-and-css/advanced-positioning/
 .funny-gif-img {
   display: flex;
   position: relative;
-  flex: 1;
+  max-width: 50%;
+  height: auto;
+  flex: 1 1 auto;
   z-index: 0;
 }
 
@@ -66,6 +68,7 @@ https://internetingishard.com/html-and-css/advanced-positioning/
 }
 
 .typewriter {
+  position: relative;
   z-index: 1;
 }
 
@@ -102,8 +105,8 @@ https://internetingishard.com/html-and-css/advanced-positioning/
 }
 
 .individual-project-preview > img {
-  height: 40vh;
-  width: 40vh;
+  height: 30vw;
+  width: 30vw;
   margin: auto;
 }
 
